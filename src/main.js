@@ -17,12 +17,12 @@ function buscarEnAPI(offset = 00) {
     }
         
     if (typeof offset === 'string') {
-        console.log('era string')
+        
 
-        // const LLAMADA_API = offset;
+        const LLAMADA_API = 'https://pokeapi.co/api/v2/pokemon/' + offset;
 
-        // return fetch(LLAMADA_API)
-        // .then(respuesta => respuesta.json())
+        return fetch(LLAMADA_API)
+        .then(respuesta => respuesta.json())
     }
         
 }
@@ -45,18 +45,27 @@ function armarListado(offset) {
             
             const nuevoCuadro = document.createElement('div');
             nuevoCuadro.classList.add('col-xl-3');
+            nuevoCuadro.classList.add('col-xs-2');
             nuevoCuadro.classList.add('col-lg-4');
             nuevoCuadro.classList.add('col-md-6');
             nuevoCuadro.classList.add('poke-listado');
             nuevoCuadro.textContent = pokemon.name;
 
-            
+            const nuevaImagen = document.createElement('img');
+            buscarEnAPI(pokemon.name).then(resultado => {
+                //console.log(resultado.sprites.front_default);
+                nuevaImagen.src = resultado.sprites.front_default
+                
+            })
+
+
             
 
 
 
 
             $listado.appendChild(nuevoCuadro);
+            $listado.appendChild(nuevaImagen);
 
         })
     })
@@ -65,14 +74,14 @@ function armarListado(offset) {
 document.querySelector('.nav').onclick = function(e) {
     
     if (e.target.textContent.toLowerCase() === 'siguiente') {
-        manejarNav(e.target, true);
+        manejarNav(true);
     } else if (e.target.textContent.toLowerCase() === 'atras') {
-        manejarNav(e.target, false);
+        manejarNav(false);
 }
 }
 
 
-function manejarNav(elemento, direccion) {
+function manejarNav(direccion) {
     
         if (direccion === true) {
             pagActual += 20;
@@ -84,7 +93,7 @@ function manejarNav(elemento, direccion) {
             if (pagActual === 0) {
                 return
             }
-
+            console.log(`nueva pagina actual es ${pagActual}`);
             pagActual -= 20;
             armarListado(pagActual);
             
