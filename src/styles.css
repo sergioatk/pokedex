@@ -1,0 +1,21 @@
+body {
+    background-color: #151515;
+    color: white;
+    text-align: center;
+}
+
+.poke-listado {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#siguiente {
+    background-color: teal;
+    cursor: pointer;
+}
+
+#atras {
+    background-color: teal;
+    cursor: pointer;
+}
+
