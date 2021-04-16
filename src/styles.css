@@ -20,3 +20,6 @@ body {
     cursor: pointer;
 }
 
+.pokedex {
+    height: 99vh;
+}

@@ -116,7 +116,21 @@ function mostrarInfo(pokemon) {
         $nombre.textContent = respuesta.name;
         $altura.textContent = respuesta.height;
         $peso.textContent = respuesta.weight;
-        $habilidad.textContent = respuesta.abilities[0].ability.name;
+        $habilidad.textContent = '';
+
+        respuesta.abilities.forEach(function(habilidad) {
+            
+            if (!$habilidad.textContent) {
+                $habilidad.textContent = habilidad.ability.name;
+                
+            } else {
+                $habilidad.textContent += `, ${habilidad.ability.name}`;
+                
+            }
+            
+        })
+
+        
     })
 }
 
