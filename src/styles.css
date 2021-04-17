@@ -4,7 +4,13 @@ body {
     text-align: center;
 }
 
-.poke-listado {
+.contenedor-imagen {
+    height: 30px;
+    width: 30px;
+    background-color: teal;
+}
+
+.item-lista {
     padding-top: 15px;
     padding-bottom: 15px;
     cursor: pointer ;
