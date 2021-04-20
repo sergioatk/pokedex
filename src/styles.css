@@ -4,28 +4,33 @@ body {
     text-align: center;
 }
 
-.contenedor-imagen {
-    height: 30px;
-    width: 30px;
-    background-color: teal;
+span {
+    color: thistle;
 }
 
-.item-lista {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    cursor: pointer ;
-}
-
-#siguiente {
-    background-color: teal;
-    cursor: pointer;
-}
-
-#atras {
-    background-color: teal;
-    cursor: pointer;
+#info-poke {
+    height: 200px;
 }
 
 .pokedex {
-    height: 99vh;
+    height: 90vh;
+}
+
+
+.fila {
+    margin-top: 20px;
+    margin-left: 20px;;
+    
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+img {
+    width: 150px;
+}
+
+h1 {
+    text-decoration: underline;
 }
