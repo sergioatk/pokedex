@@ -1,3 +1,6 @@
+import { Pokemon } from "./clases.js";
+
+
 export let offset = 0;
 export async function manejarInputLista(callbackAPI, callbackMostrarInfo) {
     const lista = document.querySelector('.list-group');
@@ -6,7 +9,8 @@ export async function manejarInputLista(callbackAPI, callbackMostrarInfo) {
       if (elemento.classList.contains('list-group-item')) {
         const infoPokemon = callbackAPI(elemento.dataset.nombre)
           .then((info) => {
-            callbackMostrarInfo(info);
+            const nuevoPokemon = new Pokemon(info.name, info.weight, info.height, info.abilities, info.sprites.front_default);
+            callbackMostrarInfo(nuevoPokemon);
           })
       }
     }
