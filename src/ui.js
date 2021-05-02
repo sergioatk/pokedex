@@ -14,11 +14,11 @@ export async function popularLista(pedido, callbackAPI) {
     const $habilidades = document.querySelector('#habilidades');
     $habilidades.textContent = '';
     const $imagen = document.querySelector('img');
-    $imagen.src = pokemon.sprites.front_default;
-    $nombre.textContent = pokemon.name;
-    $altura.textContent = pokemon.height;
-    $peso.textContent = pokemon.weight;
-    pokemon.abilities.forEach(function(habilidades) {
+    $imagen.src = pokemon.imagen;
+    $nombre.textContent = pokemon.nombre;
+    $altura.textContent = pokemon.altura;
+    $peso.textContent = pokemon.peso;
+    pokemon.habilidades.forEach(function(habilidades) {
       if (!$habilidades.textContent) {
         $habilidades.textContent = habilidades.ability.name;    
       } else {
